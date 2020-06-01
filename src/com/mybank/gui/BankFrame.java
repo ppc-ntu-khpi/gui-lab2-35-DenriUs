@@ -10,7 +10,6 @@ import com.mybank.domain.Account;
 import com.mybank.domain.Bank;
 import com.mybank.domain.CheckingAccount;
 import com.mybank.domain.Customer;
-import com.mybank.domain.SavingsAccount;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -174,21 +173,12 @@ public class BankFrame extends javax.swing.JFrame {
                     .append(customer.getFirstName())
                     .append("</span><br><hr>");
             
-            for(int j = 0; j < customer.getNumberOfAccounts(); j++) {
+            for (int j = 0; j < customer.getNumberOfAccounts(); j++) {
                 Account account = customer.getAccount(j);
-                
-                customersReport.append("&nbsp;<b>Acc Type: </b>");
-                
-                if (account instanceof CheckingAccount) {
-                    customersReport.append("Checking");
-                } else if (account instanceof SavingsAccount) {
-                    customersReport.append("Savings");
-                } else {
-                    customersReport.append("Unknown");
-                    continue;
-                }
-                
-                customersReport.append("<br>&nbsp;<b>Balance: <span style=\"color:red;\">$")
+
+                customersReport.append("&nbsp;<b>Acc Type: </b>")
+                        .append(account instanceof CheckingAccount ? "Checking" : "Savings")
+                        .append("<br>&nbsp;<b>Balance: <span style=\"color:red;\">$")
                         .append(account.getBalance())
                         .append("</span></b><br>");
             }
