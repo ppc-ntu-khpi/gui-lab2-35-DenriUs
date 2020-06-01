@@ -188,7 +188,7 @@ public class BankFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_reportButtonActionPerformed
 
     private void aboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutButtonActionPerformed
-        JOptionPane.showMessageDialog(this, "Welcome to GUI bank program!");
+        JOptionPane.showMessageDialog(this, "Welcome to bank GUI!");
     }//GEN-LAST:event_aboutButtonActionPerformed
 
     /**
